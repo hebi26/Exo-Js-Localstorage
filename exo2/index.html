@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+  <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript"></script>
+        <title>Exo-Js-Localstorage</title>
+    </head>
+    <body>
+
+    <p id="retour"></p>
+    <button id="btn">Valider</button>
+
+
+      <script>
+
+      var count = localStorage.getItem('compteur');
+        count = parseInt(count);
+
+      document.getElementById('btn').onclick = function(){
+      count++;
+
+      localStorage.setItem('compteur', count);
+      document.getElementById('retour').innerHTML = count;
+
+      };
+
+      </script>
+
+
+
+
+
+
+    </body>
+  </html>
