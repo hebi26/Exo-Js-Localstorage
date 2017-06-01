@@ -10,11 +10,13 @@
 <section id="edit">
 
     <label for="name">Nom</label>
-    <input type="text" id="name" name="name">
+    <br>
+    <input type="text" id="name">
     <br>
     <label for="val">Valeur</label>
-    <input type="text" id="val" name="val">
     <br>
+    <input type="text" id="val">
+    <br><br>
 
 
     <button id="btn" onclick="ecrire();">Ecrire</button>
@@ -26,19 +28,35 @@
 
 <section id="visu"></section>
 
-      <script>
+
+<script>
 
       function ecrire(){
-        localStorage.getItem("nom", name);
-        localStorage.getItem("valeur", val);
+      var nom=document.getElementById('name').value;
+      var valeur=document.getElementById('val').value;
+
+      localStorage.setItem("name", nom);
+      localStorage.setItem("value", valeur);
+      document.getElementById('visu').innerHTML = ("données enregistrées.")
       };
 
       function lire(){
-
-      document.getElementById('visu').innerHTML = (localStorage.nom + localStorage.valeur);
+      document.getElementById('visu').innerHTML = ("nom : "+localStorage.getItem("name")+"<br>valeur : "+localStorage.getItem("value")+"<br><br>");
+      console.log(localStorage);
       };
 
-      </script>
+      function effacer(){
+      document.getElementById('visu').innerHTML = (localStorage.getItem("name")+" est éffacé.");
+      localStorage.removeItem("name");
+      localStorage.removeItem("value");
+      };
+
+      function reini(){
+      document.getElementById('visu').innerHTML = ("reinitialisation complète.<br>");
+      localStorage.clear();
+      };
+
+</script>
 
 
 
