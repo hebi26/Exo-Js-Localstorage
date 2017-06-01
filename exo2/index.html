@@ -13,10 +13,11 @@
 
       <script>
 
+      document.getElementById('btn').onclick = function(){
       var count = localStorage.getItem('compteur');
         count = parseInt(count);
 
-      document.getElementById('btn').onclick = function(){
+
       count++;
 
       localStorage.setItem('compteur', count);
